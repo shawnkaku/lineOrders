@@ -31,5 +31,5 @@
 /config/master.key
 
 # Ignore line private token
-/config/line.yml
+#/config/line.yml
 
