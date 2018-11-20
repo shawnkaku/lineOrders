@@ -9,9 +9,9 @@ class LineController < ApplicationController
       }
   end
   def webhook
-    reply_text = simple_msg("^_^")
-    # 傳送訊息
-    response = reply_to_line(reply_text)
+    # reply_text = simple_msg("^_^")
+    # # 傳送訊息
+    # response = reply_to_line(reply_text)
 
     # 回應 200
     head :ok
