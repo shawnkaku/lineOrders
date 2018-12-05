@@ -6,6 +6,6 @@ branches:
 notifications:
   slack:
     on_success: always
-    on_failure: always # default: always
+    on_failure: always
   email:
       - shawnkuo67@gmail.com
