@@ -1,2 +1,11 @@
 language: ruby
 script: 'true'
+branches:
+    only:
+        - master
+notifications:
+  slack:
+    on_success: always
+    on_failure: always # default: always
+  email:
+      - shawnkuo67@gmail.com
