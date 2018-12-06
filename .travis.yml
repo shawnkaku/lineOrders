@@ -1,11 +1,14 @@
 language: ruby
-script: 'true'
+
+script:
+    - rspec --format doc
+    - true
+    - false
+
 branches:
     only:
         - master
+
 notifications:
-  slack:
-    on_success: always
-    on_failure: always
-  email:
-        - shawnkuo67@gmail.com
+    - email: true
+
