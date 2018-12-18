@@ -9,8 +9,8 @@ class LineController < ApplicationController
       }
   end
   def webhook
-    # reply_text = simple_msg("RoR")
-    reply_text = rich_menu
+    reply_text = simple_msg("RoR")
+    # reply_text = rich_menu
     # 傳送訊息
     response = reply_to_line(reply_text)
     # 回應 200
@@ -29,86 +29,65 @@ class LineController < ApplicationController
   end
   def rich_menu
     message = {
-      "size":{
-          "width":2500,
-          "height":1686
+      "size": {
+        "width": 2500,
+        "height": 843
       },
-      "selected":false,
-      "name":"Controller",
-      "chatBarText":"Controller",
-      "areas":[
-          {
-            "bounds":{
-                "x":551,
-                "y":325,
-                "width":321,
-                "height":321
-            },
-            "action":{
-                "type":"message",
-                "text":"up"
-            }
+      "selected": true,
+      "name": "圖文選單 1",
+      "chatBarText": "查看更多資訊",
+      "areas": [
+        {
+          "bounds": {
+            "x": 8,
+            "y": 80,
+            "width": 539,
+            "height": 686
           },
-          {
-            "bounds":{
-                "x":876,
-                "y":651,
-                "width":321,
-                "height":321
-            },
-            "action":{
-                "type":"message",
-                "text":"right"
-            }
-          },
-          {
-            "bounds":{
-                "x":551,
-                "y":972,
-                "width":321,
-                "height":321
-            },
-            "action":{
-                "type":"message",
-                "text":"down"
-            }
-          },
-          {
-            "bounds":{
-                "x":225,
-                "y":651,
-                "width":321,
-                "height":321
-            },
-            "action":{
-                "type":"message",
-                "text":"left"
-            }
-          },
-          {
-            "bounds":{
-                "x":1433,
-                "y":657,
-                "width":367,
-                "height":367
-            },
-            "action":{
-                "type":"message",
-                "text":"btn b"
-            }
-          },
-          {
-            "bounds":{
-                "x":1907,
-                "y":657,
-                "width":367,
-                "height":367
-            },
-            "action":{
-                "type":"message",
-                "text":"btn a"
-            }
+          "action": {
+            "type": "postback",
+            "text": "查看訂單",
+            "data": "action=getOrders"
           }
+        },
+        {
+          "bounds": {
+            "x": 652,
+            "y": 81,
+            "width": 560,
+            "height": 682
+          },
+          "action": {
+            "type": "uri",
+            "uri": "line://ti/p/@dml3676y"
+          }
+        },
+        {
+          "bounds": {
+            "x": 1302,
+            "y": 76,
+            "width": 520,
+            "height": 682
+          },
+          "action": {
+            "type": "postback",
+            "text": "會員資料",
+            "data": "action=getMemberInfo"
+          }
+        },
+        {
+          "bounds": {
+            "x": 1902,
+            "y": 81,
+            "width": 556,
+            "height": 673
+          },
+          "action": {
+            "type": "postback",
+            "text": "商品資訊",
+            "data": "action=getProducts"
+          }
+        }
       ]
     }
   end
