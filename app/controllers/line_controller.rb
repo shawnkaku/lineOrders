@@ -29,63 +29,26 @@ class LineController < ApplicationController
   end
   def rich_menu
     message = {
+      "richMenuId": "{richMenuId}",
       "size": {
         "width": 2500,
-        "height": 843
+        "height": 1686
       },
-      "selected": true,
-      "name": "圖文選單 1",
-      "chatBarText": "查看更多資訊",
+      "selected": false,
+      "name": "Nice richmenu",
+      "chatBarText": "Tap to open",
       "areas": [
         {
           "bounds": {
-            "x": 8,
-            "y": 80,
-            "width": 539,
-            "height": 686
+            "x": 0,
+            "y": 0,
+            "width": 2500,
+            "height": 1686
           },
           "action": {
             "type": "postback",
-            "text": "查看訂單",
-            "data": "action=getOrders"
-          }
-        },
-        {
-          "bounds": {
-            "x": 652,
-            "y": 81,
-            "width": 560,
-            "height": 682
-          },
-          "action": {
-            "type": "uri",
-            "uri": "line://ti/p/@dml3676y"
-          }
-        },
-        {
-          "bounds": {
-            "x": 1302,
-            "y": 76,
-            "width": 520,
-            "height": 682
-          },
-          "action": {
-            "type": "postback",
-            "text": "會員資料",
-            "data": "action=getMemberInfo"
-          }
-        },
-        {
-          "bounds": {
-            "x": 1902,
-            "y": 81,
-            "width": 556,
-            "height": 673
-          },
-          "action": {
-            "type": "postback",
-            "text": "商品資訊",
-            "data": "action=getProducts"
+            "label":"Buy",
+            "data": "action=buy&itemid=123"
           }
         }
       ]
