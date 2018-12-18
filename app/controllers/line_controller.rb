@@ -9,7 +9,8 @@ class LineController < ApplicationController
       }
   end
   def webhook
-    reply_text = simple_msg("RoR")
+    # reply_text = simple_msg("RoR")
+    reply_text = rich_menu
     # 傳送訊息
     response = reply_to_line(reply_text)
     # 回應 200
@@ -24,6 +25,91 @@ class LineController < ApplicationController
     message = {
       type: 'text',
       text: vtext
+    }
+  end
+  def rich_menu
+    message = {
+      "size":{
+          "width":2500,
+          "height":1686
+      },
+      "selected":false,
+      "name":"Controller",
+      "chatBarText":"Controller",
+      "areas":[
+          {
+            "bounds":{
+                "x":551,
+                "y":325,
+                "width":321,
+                "height":321
+            },
+            "action":{
+                "type":"message",
+                "text":"up"
+            }
+          },
+          {
+            "bounds":{
+                "x":876,
+                "y":651,
+                "width":321,
+                "height":321
+            },
+            "action":{
+                "type":"message",
+                "text":"right"
+            }
+          },
+          {
+            "bounds":{
+                "x":551,
+                "y":972,
+                "width":321,
+                "height":321
+            },
+            "action":{
+                "type":"message",
+                "text":"down"
+            }
+          },
+          {
+            "bounds":{
+                "x":225,
+                "y":651,
+                "width":321,
+                "height":321
+            },
+            "action":{
+                "type":"message",
+                "text":"left"
+            }
+          },
+          {
+            "bounds":{
+                "x":1433,
+                "y":657,
+                "width":367,
+                "height":367
+            },
+            "action":{
+                "type":"message",
+                "text":"btn b"
+            }
+          },
+          {
+            "bounds":{
+                "x":1907,
+                "y":657,
+                "width":367,
+                "height":367
+            },
+            "action":{
+                "type":"message",
+                "text":"btn a"
+            }
+          }
+      ]
     }
   end
 end
