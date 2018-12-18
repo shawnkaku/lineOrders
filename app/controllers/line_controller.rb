@@ -29,26 +29,26 @@ class LineController < ApplicationController
   end
   def rich_menu
     message = {
-      "richMenuId": "{richMenuId}",
-      "size": {
-        "width": 2500,
-        "height": 1686
+      richMenuId: "{richMenuId}",
+      size: {
+        width: 2500,
+        height: 1686
       },
-      "selected": false,
-      "name": "Nice richmenu",
-      "chatBarText": "Tap to open",
-      "areas": [
+      selected: false,
+      name: "Nice richmenu",
+      chatBarText: "Tap to open",
+      areas: [
         {
-          "bounds": {
-            "x": 0,
-            "y": 0,
-            "width": 2500,
-            "height": 1686
+          bounds: {
+            x: 0,
+            y: 0,
+            width: 2500,
+            height: 1686
           },
-          "action": {
-            "type": "postback",
-            "label":"Buy",
-            "data": "action=buy&itemid=123"
+          action: {
+            type: "postback",
+            label:"Buy",
+            data: "action=buy&itemid=123"
           }
         }
       ]
