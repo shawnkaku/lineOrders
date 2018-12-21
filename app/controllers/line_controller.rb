@@ -9,9 +9,9 @@ class LineController < ApplicationController
       }
   end
   def webhook
-    create_rich_menu rich_menu
+    # create_rich_menu rich_menu
     cmd = get_rich_menus 
-    reply_text = simple_msg(cmd)
+    reply_text = simple_msg("cmd")
     # reply_text = rich_menu
     # 傳送訊息
     response = reply_to_line(reply_text)
