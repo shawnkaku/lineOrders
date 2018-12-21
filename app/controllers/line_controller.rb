@@ -9,7 +9,7 @@ class LineController < ApplicationController
       }
   end
   def webhook
-    # create_rich_menu rich_menu
+    create_rich_menu rich_menu
     cmd = get_rich_menus 
     reply_text = simple_msg(cmd)
     # reply_text = rich_menu
@@ -29,5 +29,29 @@ class LineController < ApplicationController
       text: vtext
     }
   end
-  
+  def rich_menu
+    message = {
+        "size": {
+          "width": 2500,
+          "height": 1686
+        },
+        "selected": false,
+        "name": "Nice richmenu",
+        "chatBarText": "Tap here",
+        "areas": [
+          {
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 2500,
+              "height": 1686
+            },
+            "action": {
+              "type": "postback",
+              "data": "action=buy&itemid=123"
+            }
+          }
+       ]
+    }
+  end
 end
