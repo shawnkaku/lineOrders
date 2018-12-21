@@ -9,6 +9,7 @@ class LineController < ApplicationController
       }
   end
   def webhook
+    create_rich_menu rich_menu
     reply_text = simple_msg("RoR")
     # reply_text = rich_menu
     # 傳送訊息
@@ -29,29 +30,27 @@ class LineController < ApplicationController
   end
   def rich_menu
     message = {
-      richMenuId: "{richMenuId}",
-      size: {
-        width: 2500,
-        height: 1686
-      },
-      selected: false,
-      name: "Nice richmenu",
-      chatBarText: "Tap to open",
-      areas: [
-        {
-          bounds: {
-            x: 0,
-            y: 0,
-            width: 2500,
-            height: 1686
-          },
-          action: {
-            type: "postback",
-            label:"Buy",
-            data: "action=buy&itemid=123"
+        "size": {
+          "width": 2500,
+          "height": 1686
+        },
+        "selected": false,
+        "name": "Nice richmenu",
+        "chatBarText": "Tap here",
+        "areas": [
+          {
+            "bounds": {
+              "x": 0,
+              "y": 0,
+              "width": 2500,
+              "height": 1686
+            },
+            "action": {
+              "type": "postback",
+              "data": "action=buy&itemid=123"
+            }
           }
-        }
-      ]
+       ]
     }
   end
 end
