@@ -9,7 +9,7 @@ class LineController < ApplicationController
       }
   end
   def webhook
-    # create_rich_menu rich_menu
+    create_rich_menu rich_menu
     # get_rich_menus 
     reply_text = simple_msg("OO")
     # reply_text = rich_menu
