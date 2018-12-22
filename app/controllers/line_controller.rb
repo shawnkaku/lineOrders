@@ -11,9 +11,9 @@ class LineController < ApplicationController
   def webhook
     # puts "============#{line.create_rich_menu(rich_menu_form)}==============="
     rich_menu_id = "richmenu-244642253d279cfef6f403b1cdac03e6"
-    file = File.read('2500.jpg')
-    puts "----------------"
-    line.create_rich_menu_image(rich_menu_id, file)
+    # file = File.read('2500.jpg')
+    # puts "----------------"
+    # line.create_rich_menu_image(rich_menu_id, file)
     puts "=======create_rich_menu_image========="
     line.set_default_rich_menu(rich_menu_id)
     puts "_________set_default_rich_menu_________"
