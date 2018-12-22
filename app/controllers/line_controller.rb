@@ -9,12 +9,14 @@ class LineController < ApplicationController
       }
   end
   def webhook
-    user_id = "U44981186471f183b68d9842507058675"
+    
     # line.create_rich_menu rich_menu
-    puts line.get_profile user_id
+    puts line.get_rich_menus
+    # line.create_rich_menu_image(rich_menu_id, file)
+    # line.get_rich_menu_image(rich_menu_id)
     # line.create_rich_menu_image(rich_menu_id, file)
     # puts line.get_rich_menus 
-    reply_text = simple_msg("profile")
+    reply_text = simple_msg("get_rich_menus")
     # reply_text = rich_menu
     # 傳送訊息
     response = reply_to_line(reply_text)
