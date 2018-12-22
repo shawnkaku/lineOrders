@@ -9,8 +9,8 @@ class LineController < ApplicationController
       }
   end
   def webhook
-    
-    # line.create_rich_menu rich_menu
+    puts "============#{line.create_rich_menu(rich_menu_form)}==============="
+    puts "__________________________"
     puts "======#{line.get_rich_menus}======"
     # line.create_rich_menu_image(rich_menu_id, file)
     # line.get_rich_menu_image(rich_menu_id)
@@ -34,7 +34,7 @@ class LineController < ApplicationController
       text: vtext
     }
   end
-  def rich_menu
+  def rich_menu_form
     message = {
         "size": {
           "width": 2500,
